@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import React from 'react'
 import Layout from '../components/layout'
 
-const About: FC = () => (
-  <Layout>
+const About = () => (
+  <Layout title='About'>
     <h1>Rocket Explorer | About</h1>
   </Layout>
 )
