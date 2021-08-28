@@ -1,26 +1,40 @@
 import { FC } from 'react'
-import { Box, Button } from 'grommet'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 import Link from 'next/link'
 
-const Navigation: FC = () => (
-  <Box
-    tag='header'
-    direction='row-responsive'
-    justify='between'
-    align='center'
-    background='brand'
-    pad='medium'
-    as='nav'
-  >
-    <Box direction='row' align='center' gap='small' >
+const styles = {
+  root: { flexGrow: 1 },
+  grow: { flexGrow: 1 },
+  menuButton: { marginLeft: -12, marginRight: 20 }
+}
+
+interface IProps {
+  classes: { [className: string]: string }
+}
+
+const Navigation: FC = (props: IProps) => (
+  <AppBar position='static'>
+    <Toolbar>
+      <Typography variant='title' color='inherit' className={props.classes.grow}>
+        Rocket Explorer 🚀 ✨ 🔭
+      </Typography>
       <Link href='/' passHref={true}>
-        <Button label="Rest API" />
+        <Button>Rest API</Button>
       </Link>
       <Link href='/about' passHref={true}>
-        <Button label="About" />
+        <Button>About</Button>
       </Link>
-    </Box>
-  </Box>
+    </Toolbar>
+  </AppBar>
 )
+
+Navigation.propTypes = {
+  classes: PropTypes.object.isRequired
+}
 
 export default Navigation

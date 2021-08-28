@@ -1,0 +1,11 @@
+v1:
+  server:
+    - info
+    - statistics
+    - me
+  users:
+    - users.generatePersonalAccessToken
+    - users.getUsernameSuggestion
+    - users.getPreferences
+    - users.getAvatar
+    - users.info
